@@ -7,7 +7,6 @@ module.exports = function (RED) {
         this.token = config.token;
         this.from = config.from;
     } 
-I
     function wcaSendMsgNode(config) {
         RED.nodes.createNode(this, config);
         var node = this;
