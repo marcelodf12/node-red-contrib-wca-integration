@@ -1,4 +1,4 @@
-<script type="text/html" data-template-name="wca-integration">
+<script type="text/html" data-template-name="wca-send-msg">
     <div class="form-row">
         <label for="node-input-name"><i class="fa fa-tag"></i> Name</label>
         <input type="text" id="node-input-name" placeholder="Name">
@@ -13,13 +13,13 @@
     </div>
 </script>
 
-<script type="text/html" data-help-name="wca-integration">
+<script type="text/html" data-help-name="wca-send-msg">
     <p>Whatsapp cloud api integration node for node-red</p>
 </script>
 
 <script type="text/javascript">
-    RED.nodes.registerType('wca-integration',{
-        category: 'common',
+    RED.nodes.registerType('wca-send-msg',{
+        category: 'Whatsapp Cloud',
         color: '#64B161',
         defaults: {
             name: {value:""},
@@ -30,7 +30,7 @@
         outputs:1,
         icon: "whatsapp.png",
         label: function() {
-            return this.name||"wca-integration";
+            return this.name||"wca-send-msg";
         }
     });
 </script>
