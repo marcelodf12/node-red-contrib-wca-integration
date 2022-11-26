@@ -1,0 +1,65 @@
+<script type="text/html" data-template-name="wca-integration">
+    <div class="form-row">
+        <label for="node-input-name"><i class="fa fa-tag"></i> Name</label>
+        <input type="text" id="node-input-name" placeholder="Name">
+    </div>
+    <div class="form-row">
+        <label for="node-input-auth"><i class="fa fa-tag"></i> Auth</label>
+        <input type="text" id="node-input-auth" placeholder="Auth">
+    </div>
+    <div class="form-row">
+        <label for="node-input-destination"><i class="fa fa-mobile"></i> Destination</label>
+        <input type="text" id="node-input-destination" placeholder="Destination">
+    </div>
+</script>
+
+<script type="text/html" data-help-name="wca-integration">
+    <p>Whatsapp cloud api integration node for node-red</p>
+</script>
+
+<script type="text/javascript">
+    RED.nodes.registerType('wca-integration',{
+        category: 'common',
+        color: '#64B161',
+        defaults: {
+            name: {value:""},
+            auth: {value: "", type: "wca-config"},
+            destination: {value:""}
+        },
+        inputs:1,
+        outputs:1,
+        icon: "whatsapp.png",
+        label: function() {
+            return this.name||"wca-integration";
+        }
+    });
+</script>
+
+<script type="text/javascript">
+    RED.nodes.registerType('wca-config', {
+        category: 'config',
+        defaults: {
+            name: { value: "", required: true },
+            token: { value: "", required: true },
+            from: { value: "", required: true }
+        },
+        label: function () {
+            return this.name;
+        }
+    });
+</script>
+
+<script type="text/x-red" data-template-name="wca-config">
+    <div class="form-row">
+        <label for="node-config-input-name"><i class="fa fa-globe"></i> Name</label>
+        <input type="text" id="node-config-input-name">
+    </div>
+    <div class="form-row">
+        <label for="node-config-input-token"><i class="fa fa-key"></i> Token</label>
+        <input type="text" id="node-config-input-token">
+    </div>
+    <div class="form-row">
+        <label for="node-config-input-from"><i class="fa fa-id-card"></i> Phone Number ID</label>
+        <input type="text" id="node-config-input-from">
+    </div>
+</script>
