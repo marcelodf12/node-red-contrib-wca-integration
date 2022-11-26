@@ -12,7 +12,6 @@ module.exports = function (RED) {
         var node = this;
 
         console.log("Init integration");
-        console.log(config);
 
         const auth = RED.nodes.getNode(config.auth);
         const token = auth.token
@@ -21,14 +20,10 @@ module.exports = function (RED) {
 
         node.on('input', function (msg) {
             const textMsg = msg.payload
-            console.log(msg);
-            
-
+           
             var myHeaders = new fetch.Headers();
             myHeaders.append("Authorization", `Bearer ${token}`);
             myHeaders.append("Content-Type", "application/json");
-
-            console.log(myHeaders.get('Authorization'));
 
             var raw = JSON.stringify({
                 "messaging_product": "whatsapp",
@@ -49,9 +44,6 @@ module.exports = function (RED) {
 
             const url = `https://graph.facebook.com/v15.0/${from}/messages`
 
-            console.log(url);
-            console.log(requestOptions);
-
             fetch(url , requestOptions)
                 .then(response => response.text())
                 .then(result => {console.log(result); node.send(result)})
@@ -64,6 +56,6 @@ module.exports = function (RED) {
 
     }
 
-    RED.nodes.registerType("wca-send-msg", wcaSendMsgNode);
-    RED.nodes.registerType("wca-config", wcaConfig);
+    RED.nodes.registerType("wca_send_msg", wcaSendMsgNode);
+    RED.nodes.registerType("wca_config", wcaConfig);
 }

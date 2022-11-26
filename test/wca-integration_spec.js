@@ -1,10 +1,10 @@
 var should = require("should");
 var helper = require("node-red-node-test-helper");
-var wcaIntegrationNode = require("../wca-integration");
+var wcaIntegrationNode = require("../wca_send_msg");
 
 //helper.init(require.resolve('node-red'));
 
-describe('wca-integration Node', function () {
+describe('wca_send_msg Node', function () {
 
   /*beforeEach(function (done) {
       helper.startServer(done);
@@ -16,7 +16,7 @@ describe('wca-integration Node', function () {
   });*/
 
   it('TODO test', function (done) {
-    var flow = [{ id: "n1", type: "wca-integration", name: "wca-integration" }];
+    var flow = [{ id: "n1", type: "wca_send_msg", name: "wca_send_msg" }];
     // TODO
     done()
   });
