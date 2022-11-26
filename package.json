@@ -1,6 +1,6 @@
 {
     "name": "@marcelodf12/node-red-contrib-wca-integration",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "description": "Whatsapp cloud api integration node for node-red",
     "author": "Marcelo Franco",
     "email": "marcelodf12@gmail.com",
